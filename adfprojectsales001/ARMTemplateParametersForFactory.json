@@ -1,0 +1,78 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfprojectsales001"
+		},
+		"LS_BULK_accountKey": {
+			"value": ""
+		},
+		"LS_BULK_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_PARUET_accountKey": {
+			"value": ""
+		},
+		"LS_EXCEL_accountKey": {
+			"value": ""
+		},
+		"LS_EXCEL_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_PRQUET_accountKey": {
+			"value": ""
+		},
+		"LS_RESTAPI_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_BULK_properties_typeProperties_url": {
+			"value": "https://adlsrawprojectsales.dfs.core.windows.net/"
+		},
+		"LS_BULK_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"LS_CSV_properties_typeProperties_url": {
+			"value": "https://adlsrawprojectsales.dfs.core.windows.net/"
+		},
+		"LS_CSV_PARUET_properties_typeProperties_url": {
+			"value": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_properties_typeProperties_url": {
+			"value": "https://adlsrawprojectsales.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"LS_JSON_properties_typeProperties_url": {
+			"value": "https://adlsrawprojectsales.dfs.core.windows.net/"
+		},
+		"LS_JSON_PRQUET_properties_typeProperties_url": {
+			"value": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"LS_RESTAPI_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/jVHQCg/data"
+		},
+		"LS_RESTAPI_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"LS_SFTP_properties_typeProperties_url": {
+			"value": "https://adlsrawprojectsales.dfs.core.windows.net/"
+		},
+		"LS_SFTP_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		}
+	}
+}

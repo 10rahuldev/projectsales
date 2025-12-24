@@ -1,0 +1,223 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfprojectsales001"
+		},
+		"LS_BULK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BULK'"
+		},
+		"LS_BULK_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BULK_PARQUET'"
+		},
+		"LS_CSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV'"
+		},
+		"LS_CSV_PARUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_CSV_PARUET'"
+		},
+		"LS_EXCEL_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL'"
+		},
+		"LS_EXCEL_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_PARQUET'"
+		},
+		"LS_JSON_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_JSON'"
+		},
+		"LS_JSON_PRQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_JSON_PRQUET'"
+		},
+		"LS_RESTAPI_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_RESTAPI_PARQUET'"
+		},
+		"LS_SFTP_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SFTP'"
+		},
+		"LS_SFTP_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_PARQUET'"
+		},
+		"LS_BULK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsrawprojectsales.dfs.core.windows.net/"
+		},
+		"LS_BULK_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"LS_CSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsrawprojectsales.dfs.core.windows.net/"
+		},
+		"LS_CSV_PARUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsrawprojectsales.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"LS_JSON_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsrawprojectsales.dfs.core.windows.net/"
+		},
+		"LS_JSON_PRQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"LS_RESTAPI_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/jVHQCg/data"
+		},
+		"LS_RESTAPI_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"LS_SFTP_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsrawprojectsales.dfs.core.windows.net/"
+		},
+		"LS_SFTP_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfprojectsales001_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LS_BULK_accountKey": {
+						"value": "[parameters('LS_BULK_accountKey')]"
+					},
+					"LS_BULK_PARQUET_accountKey": {
+						"value": "[parameters('LS_BULK_PARQUET_accountKey')]"
+					},
+					"LS_CSV_accountKey": {
+						"value": "[parameters('LS_CSV_accountKey')]"
+					},
+					"LS_CSV_PARUET_accountKey": {
+						"value": "[parameters('LS_CSV_PARUET_accountKey')]"
+					},
+					"LS_EXCEL_accountKey": {
+						"value": "[parameters('LS_EXCEL_accountKey')]"
+					},
+					"LS_EXCEL_PARQUET_accountKey": {
+						"value": "[parameters('LS_EXCEL_PARQUET_accountKey')]"
+					},
+					"LS_JSON_accountKey": {
+						"value": "[parameters('LS_JSON_accountKey')]"
+					},
+					"LS_JSON_PRQUET_accountKey": {
+						"value": "[parameters('LS_JSON_PRQUET_accountKey')]"
+					},
+					"LS_RESTAPI_PARQUET_accountKey": {
+						"value": "[parameters('LS_RESTAPI_PARQUET_accountKey')]"
+					},
+					"LS_SFTP_accountKey": {
+						"value": "[parameters('LS_SFTP_accountKey')]"
+					},
+					"LS_SFTP_PARQUET_accountKey": {
+						"value": "[parameters('LS_SFTP_PARQUET_accountKey')]"
+					},
+					"LS_BULK_properties_typeProperties_url": {
+						"value": "[parameters('LS_BULK_properties_typeProperties_url')]"
+					},
+					"LS_BULK_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_BULK_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_CSV_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_properties_typeProperties_url')]"
+					},
+					"LS_CSV_PARUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_CSV_PARUET_properties_typeProperties_url')]"
+					},
+					"LS_EXCEL_properties_typeProperties_url": {
+						"value": "[parameters('LS_EXCEL_properties_typeProperties_url')]"
+					},
+					"LS_EXCEL_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_EXCEL_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_JSON_properties_typeProperties_url": {
+						"value": "[parameters('LS_JSON_properties_typeProperties_url')]"
+					},
+					"LS_JSON_PRQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_JSON_PRQUET_properties_typeProperties_url')]"
+					},
+					"LS_RESTAPI_properties_typeProperties_url": {
+						"value": "[parameters('LS_RESTAPI_properties_typeProperties_url')]"
+					},
+					"LS_RESTAPI_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_RESTAPI_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_SFTP_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_properties_typeProperties_url')]"
+					},
+					"LS_SFTP_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_SFTP_PARQUET_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adfprojectsales001_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfprojectsales001_ArmTemplate_0')]"
+			]
+		}
+	]
+}
