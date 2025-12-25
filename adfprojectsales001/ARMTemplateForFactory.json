@@ -282,7 +282,7 @@
 							},
 							"cases": [
 								{
-									"value": "cloud_storage",
+									"value": "CloudStorage",
 									"activities": [
 										{
 											"name": "EXEC_PL3_CLOUD",
@@ -309,7 +309,7 @@
 									]
 								},
 								{
-									"value": "restapi",
+									"value": "API",
 									"activities": [
 										{
 											"name": "Wait1",
@@ -341,20 +341,6 @@
 									"activities": [
 										{
 											"name": "Wait3",
-											"type": "Wait",
-											"dependsOn": [],
-											"userProperties": [],
-											"typeProperties": {
-												"waitTimeInSeconds": 1
-											}
-										}
-									]
-								},
-								{
-									"value": "Case5",
-									"activities": [
-										{
-											"name": "Wait4",
 											"type": "Wait",
 											"dependsOn": [],
 											"userProperties": [],
@@ -599,20 +585,12 @@
 									"value": "excel",
 									"activities": [
 										{
-											"name": "Excel Pipeline",
-											"type": "ExecutePipeline",
+											"name": "Wait1",
+											"type": "Wait",
 											"dependsOn": [],
-											"policy": {
-												"secureInput": false
-											},
 											"userProperties": [],
 											"typeProperties": {
-												"pipeline": {
-													"referenceName": "PL_EXCEL",
-													"type": "PipelineReference"
-												},
-												"waitOnCompletion": true,
-												"parameters": {}
+												"waitTimeInSeconds": 1
 											}
 										}
 									]
@@ -638,8 +616,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DS_SQL_DB')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_CSV')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_EXCEL')]"
+				"[concat(variables('factoryId'), '/pipelines/PL_CSV')]"
 			]
 		},
 		{
