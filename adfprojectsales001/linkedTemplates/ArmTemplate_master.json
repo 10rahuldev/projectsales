@@ -51,6 +51,18 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SFTP_PARQUET'"
 		},
+		"LS_SNOWFLAKE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SNOWFLAKE'"
+		},
+		"LS_SQL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQL'"
+		},
+		"LS_SQL_PARQ_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SQL_PARQ'"
+		},
 		"LS_BULK_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsrawprojectsales.dfs.core.windows.net/"
@@ -96,6 +108,30 @@
 			"defaultValue": "https://adlsrawprojectsales.dfs.core.windows.net/"
 		},
 		"LS_SFTP_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"LS_SNOWFLAKE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "DBAZURESNOW01"
+		},
+		"LS_SNOWFLAKE_PARQ_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'LS_SNOWFLAKE_PARQ'"
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "DESKTOP-JV4MQET\\SQLEXPRESS"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqldata01"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_SQL_PARQ_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsparqueprojectsales.dfs.core.windows.net/"
 		},
@@ -159,6 +195,12 @@
 					"LS_SFTP_PARQUET_accountKey": {
 						"value": "[parameters('LS_SFTP_PARQUET_accountKey')]"
 					},
+					"LS_SNOWFLAKE_password": {
+						"value": "[parameters('LS_SNOWFLAKE_password')]"
+					},
+					"LS_SQL_PARQ_accountKey": {
+						"value": "[parameters('LS_SQL_PARQ_accountKey')]"
+					},
 					"LS_BULK_properties_typeProperties_url": {
 						"value": "[parameters('LS_BULK_properties_typeProperties_url')]"
 					},
@@ -194,6 +236,15 @@
 					},
 					"LS_SFTP_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_SFTP_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_SNOWFLAKE_properties_typeProperties_database": {
+						"value": "[parameters('LS_SNOWFLAKE_properties_typeProperties_database')]"
+					},
+					"LS_SNOWFLAKE_PARQ_sasUri": {
+						"value": "[parameters('LS_SNOWFLAKE_PARQ_sasUri')]"
+					},
+					"LS_SQL_PARQ_properties_typeProperties_url": {
+						"value": "[parameters('LS_SQL_PARQ_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -212,11 +263,43 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"LS_SQL_password": {
+						"value": "[parameters('LS_SQL_password')]"
+					},
+					"LS_SQL_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_server')]"
+					},
+					"LS_SQL_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_database')]"
+					},
+					"LS_SQL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQL_properties_typeProperties_userName')]"
 					}
 				}
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'adfprojectsales001_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "adfprojectsales001_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfprojectsales001_ArmTemplate_1')]"
 			]
 		}
 	]

@@ -38,6 +38,15 @@
 		"LS_SFTP_PARQUET_accountKey": {
 			"value": ""
 		},
+		"LS_SNOWFLAKE_password": {
+			"value": ""
+		},
+		"LS_SQL_password": {
+			"value": ""
+		},
+		"LS_SQL_PARQ_accountKey": {
+			"value": ""
+		},
 		"LS_BULK_properties_typeProperties_url": {
 			"value": "https://adlsrawprojectsales.dfs.core.windows.net/"
 		},
@@ -72,6 +81,24 @@
 			"value": "https://adlsrawprojectsales.dfs.core.windows.net/"
 		},
 		"LS_SFTP_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"LS_SNOWFLAKE_properties_typeProperties_database": {
+			"value": "DBAZURESNOW01"
+		},
+		"LS_SNOWFLAKE_PARQ_sasUri": {
+			"value": ""
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"value": "DESKTOP-JV4MQET\\SQLEXPRESS"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"value": "sqldata01"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_SQL_PARQ_properties_typeProperties_url": {
 			"value": "https://adlsparqueprojectsales.dfs.core.windows.net/"
 		},
 		"containerUri": {
