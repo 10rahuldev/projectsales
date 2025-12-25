@@ -44,6 +44,9 @@
 		"LS_SQL_password": {
 			"value": ""
 		},
+		"LS_SQL_DB_password": {
+			"value": ""
+		},
 		"LS_SQL_PARQ_accountKey": {
 			"value": ""
 		},
@@ -97,6 +100,15 @@
 		},
 		"LS_SQL_properties_typeProperties_userName": {
 			"value": "sa"
+		},
+		"LS_SQL_DB_properties_typeProperties_server": {
+			"value": "sql-srvr-ps-dev.database.windows.net"
+		},
+		"LS_SQL_DB_properties_typeProperties_database": {
+			"value": "sql-db-ps-dev"
+		},
+		"LS_SQL_DB_properties_typeProperties_userName": {
+			"value": "access-data-dev"
 		},
 		"LS_SQL_PARQ_properties_typeProperties_url": {
 			"value": "https://adlsparqueprojectsales.dfs.core.windows.net/"
