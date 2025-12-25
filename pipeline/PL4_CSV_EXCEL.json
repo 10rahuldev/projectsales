@@ -52,7 +52,7 @@
 							"value": "csv",
 							"activities": [
 								{
-									"name": "cvs_pipeline",
+									"name": "csv_pipeline",
 									"type": "ExecutePipeline",
 									"dependsOn": [],
 									"policy": {
