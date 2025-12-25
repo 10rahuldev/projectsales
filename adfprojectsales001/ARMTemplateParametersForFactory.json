@@ -112,6 +112,9 @@
 		},
 		"LS_SQL_PARQ_properties_typeProperties_url": {
 			"value": "https://adlsparqueprojectsales.dfs.core.windows.net/"
+		},
+		"TR_CSV_properties_PL1_Master_parameters_Trigger": {
+			"value": "Tr_sample_csv"
 		}
 	}
 }
