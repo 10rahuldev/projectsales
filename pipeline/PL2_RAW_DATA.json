@@ -49,7 +49,7 @@
 					},
 					"cases": [
 						{
-							"value": "cloud_storage",
+							"value": "CloudStorage",
 							"activities": [
 								{
 									"name": "EXEC_PL3_CLOUD",
@@ -76,7 +76,7 @@
 							]
 						},
 						{
-							"value": "restapi",
+							"value": "API",
 							"activities": [
 								{
 									"name": "Wait1",

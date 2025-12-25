@@ -73,19 +73,12 @@
 							"value": "excel",
 							"activities": [
 								{
-									"name": "Excel Pipeline",
-									"type": "ExecutePipeline",
+									"name": "Wait1",
+									"type": "Wait",
 									"dependsOn": [],
-									"policy": {
-										"secureInput": false
-									},
 									"userProperties": [],
 									"typeProperties": {
-										"pipeline": {
-											"referenceName": "PL_EXCEL",
-											"type": "PipelineReference"
-										},
-										"waitOnCompletion": true
+										"waitTimeInSeconds": 1
 									}
 								}
 							]
